@@ -1,0 +1,38 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.pda"
+    compileSdk = 34  // Set the compile SDK version to 34
+
+    defaultConfig {
+        applicationId = "com.example.pda"
+        minSdkVersion 21  // Define your minSdkVersion explicitly (21 or higher)
+        targetSdkVersion 34  // Define the target SDK version to 34
+        versionCode 1  // Set the version code for the app
+        versionName "1.0.0"  // Set the version name for the app
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            // Signing config for release build. Adjust this for your release signing config.
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
